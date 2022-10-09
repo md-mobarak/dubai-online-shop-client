@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "product_1",
+        "price": 380,
+        "image": "https://i.ibb.co/7J0tPmN/Whats-App-Image-2022-10-05-at-11-16-49-PM.jpg",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti, odio recusandae, commodi amet, quo iste facilis consectetur similique non natus? Mollitia quasi distinctio laborum, impedit aliquam numquam quas doloremque!",
+        "status": "in-stock"
+    },
+    {
+        "id": 2,
+        "name": "product_1",
+        "price": 380,
+        "image": "https://i.ibb.co/JvfZfTJ/Whats-App-Image-2022-10-05-at-11-16-50-PM-1.jpg",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti, odio recusandae, commodi amet, quo iste facilis consectetur similique non natus? Mollitia quasi distinctio laborum, impedit aliquam numquam quas doloremque!",
+        "status": "in-stock"
+    },
+    {
+        "id": 3,
+        "name": "product_1",
+        "price": 380,
+        "image": "https://i.ibb.co/zsF0q42/Whats-App-Image-2022-10-05-at-11-16-50-PM-2.jpg",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti, odio recusandae, commodi amet, quo iste facilis consectetur similique non natus? Mollitia quasi distinctio laborum, impedit aliquam numquam quas doloremque!",
+        "status": "in-stock"
+    },
+    {
+        "id": 4,
+        "name": "product_1",
+        "price": 380,
+        "image": "https://i.ibb.co/XF2ZKRw/Whats-App-Image-2022-10-05-at-11-16-50-PM.jpg",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti, odio recusandae, commodi amet, quo iste facilis consectetur similique non natus? Mollitia quasi distinctio laborum, impedit aliquam numquam quas doloremque!",
+        "status": "in-stock"
+    },
+    {
+        "id": 5,
+        "name": "product_1",
+        "price": 380,
+        "image": "https://i.ibb.co/bgtcXhQ/Whats-App-Image-2022-10-05-at-11-16-51-PM-1.jpg",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti, odio recusandae, commodi amet, quo iste facilis consectetur similique non natus? Mollitia quasi distinctio laborum, impedit aliquam numquam quas doloremque!",
+        "status": "in-stock"
+    },
+    {
+        "id": 6,
+        "name": "product_1",
+        "price": 380,
+        "image": "https://i.ibb.co/cDxCjgG/Whats-App-Image-2022-10-05-at-11-16-51-PM.jpg",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti, odio recusandae, commodi amet, quo iste facilis consectetur similique non natus? Mollitia quasi distinctio laborum, impedit aliquam numquam quas doloremque!",
+        "status": "in-stock"
+    },
+    {
+        "id": 7,
+        "name": "product_1",
+        "price": 380,
+        "image": "https://i.ibb.co/98nwjKN/Whats-App-Image-2022-10-05-at-11-16-52-PM-1.jpg",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti, odio recusandae, commodi amet, quo iste facilis consectetur similique non natus? Mollitia quasi distinctio laborum, impedit aliquam numquam quas doloremque!",
+        "status": "in-stock"
+    },
+    {
+        "id": 8,
+        "name": "product_1",
+        "price": 380,
+        "image": "https://i.ibb.co/gv96L2Q/Whats-App-Image-2022-10-05-at-11-16-52-PM-2.jpg",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti, odio recusandae, commodi amet, quo iste facilis consectetur similique non natus? Mollitia quasi distinctio laborum, impedit aliquam numquam quas doloremque!",
+        "status": "in-stock"
+    },
+    {
+        "id": 9,
+        "name": "product_1",
+        "price": 380,
+        "image": "https://i.ibb.co/d7Z0FJk/Whats-App-Image-2022-10-05-at-11-16-52-PM.jpg",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus deleniti, odio recusandae, commodi amet, quo iste facilis consectetur similique non natus? Mollitia quasi distinctio laborum, impedit aliquam numquam quas doloremque!",
+        "status": "in-stock"
+    }
+]
