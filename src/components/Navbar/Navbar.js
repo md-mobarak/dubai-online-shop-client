@@ -3,7 +3,17 @@ import './Navbar.css'
 import { BsFillCartFill } from 'react-icons/bs'
 import { FaUserAlt } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+
+
 const Navbar = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const logout = () => {
+        signOut(auth);
+    };
+
     return (
         <div className="navbar bg-color">
             <div className="navbar-start">
@@ -14,6 +24,12 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><a>CONTACT US</a></li>
                         <li><a>ABOUT US</a></li>
+
+                        <li>
+                            <Link to='/dashboard'>DASHBOARD</Link>
+                        </li>
+
+
                     </ul>
                 </div>
                 <Link to='/' className="text-white normal-case text-2xl lg:mx-10">daisyUI</Link>
@@ -23,6 +39,9 @@ const Navbar = () => {
                     <li className='text-white font-semibold'><a>CONTACT US</a></li>
 
                     <li className='text-white font-semibold'><a>ABOUT US</a></li>
+                    <li className='text-white font-semibold'>
+                        <Link to='/dashboard'>DASHBOARD</Link>
+                    </li>
                 </ul>
             </div>
             <div className="navbar-end">
@@ -31,9 +50,15 @@ const Navbar = () => {
                         <BsFillCartFill className='text-white lg:text-xl text-lg mx-3'></BsFillCartFill>
                     </Link>
 
-                    <Link to='/login'>
-                        <FaUserAlt className='text-white lg:text-xl text-lg'></FaUserAlt>
-                    </Link>
+                    {
+                        user ?
+                            <button onClick={logout}>
+                                <FaUserAlt className='text-white lg:text-xl text-lg'></FaUserAlt>
+                            </button> :
+                            <Link className='text-white lg:text-xl font-semibold' to='/login'>
+                                Login
+                            </Link>
+                    }
 
                 </span>
             </div>

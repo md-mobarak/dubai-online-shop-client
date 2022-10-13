@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../asset/Google_Icons-09-512.webp'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Login.css'
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
@@ -8,6 +8,8 @@ import auth from '../../firebase.init';
 const Login = () => {
     const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
     const navigate = useNavigate()
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
         user,
@@ -20,8 +22,10 @@ const Login = () => {
         reset()
     };
     if (user || Guser) {
-        navigate('/')
+        return navigate(from, { replace: true });
     }
+
+
     const handleGoogle = () => {
         signInWithGoogle()
     }

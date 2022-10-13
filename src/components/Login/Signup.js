@@ -1,11 +1,13 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../asset/Google_Icons-09-512.webp'
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 const Signup = () => {
     const navigate = useNavigate()
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
@@ -25,7 +27,7 @@ const Signup = () => {
         return <h1>Loading...</h1>
     }
     if (user || gUser) {
-        return navigate('/')
+        return navigate(from, { replace: true });
     }
     return (
         <div className=' flex justify-center items-center mt-10 lg:mt-27'>
