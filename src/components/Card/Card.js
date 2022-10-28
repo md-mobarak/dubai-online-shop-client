@@ -7,7 +7,7 @@ const Card = () => {
     const [index, setIndex] = useState(3)
     const initialPosts = slice(products, 0, index)
     useEffect(() => {
-        fetch(`http://localhost:5000/product`)
+        fetch(`https://dubai-online-shop.onrender.com/product`)
             .then(res => res.json())
             .then(data => {
                 setProducts(data.reverse())

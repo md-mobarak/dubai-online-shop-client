@@ -10,7 +10,7 @@ const ProductDetails = () => {
     const [productDtl, setProductDtl] = useState({})
     const { name, image, price, description } = productDtl
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://dubai-online-shop.onrender.com/product/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProductDtl(data);

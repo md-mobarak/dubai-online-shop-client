@@ -4,7 +4,7 @@ import UserRow from './UserRow';
 const AllUser = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/user', {
+        fetch('https://dubai-online-shop.onrender.com/user', {
             method: 'GET',
             headers: {
                 authorization: `Berar ${localStorage.getItem('accessToken')}`

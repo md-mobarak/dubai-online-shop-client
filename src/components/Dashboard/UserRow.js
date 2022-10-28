@@ -10,7 +10,7 @@ const UserRow = ({ index, userTable }) => {
     // console.log(user);
     // console.log(email);
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://dubai-online-shop.onrender.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Berar ${localStorage.getItem('accessToken')}`
@@ -31,7 +31,7 @@ const UserRow = ({ index, userTable }) => {
     const handleDelete = () => {
         const proceed = window.confirm("Are You Sure?")
         if (proceed) {
-            fetch(`http://localhost:5000/delete/${_id}`, {
+            fetch(`https://dubai-online-shop.onrender.com/delete/${_id}`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'

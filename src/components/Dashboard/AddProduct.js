@@ -12,7 +12,7 @@ const AddProduct = () => {
             ...data,
             image: imageURL,
         }
-        const res = await axios.post('http://localhost:5000/product', serviceData)
+        const res = await axios.post('https://dubai-online-shop.onrender.com/product', serviceData)
         reset()
         const sureMessage = res.status === 200
         if (sureMessage) {

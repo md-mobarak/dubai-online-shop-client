@@ -8,7 +8,7 @@ const ProductMG = ({ product }) => {
 
         const proceed = window.alert('Are you sure?')
 
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://dubai-online-shop.onrender.com/product/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

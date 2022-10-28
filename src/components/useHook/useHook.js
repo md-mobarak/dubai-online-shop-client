@@ -6,7 +6,7 @@ const useHook = (user) => {
         const email = user?.user?.email
         const currentUsers = { email: email }
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://dubai-online-shop.onrender.com/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

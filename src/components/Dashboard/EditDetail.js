@@ -10,7 +10,7 @@ const EditDetail = () => {
     const { _id } = productDetails
     // console.log(productDetails);
     useEffect(() => {
-        fetch(`http://localhost:5000/editDetails/${id}`)
+        fetch(`https://dubai-online-shop.onrender.com/editDetails/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProductDetails(data)
@@ -26,7 +26,7 @@ const EditDetail = () => {
             ...data,
             image: imageURL,
         }
-        const res = await axios.put(`http://localhost:5000/editProduct/${_id}`, product)
+        const res = await axios.put(`https://dubai-online-shop.onrender.com/editProduct/${_id}`, product)
         reset()
         const sureMessage = res.status === 200
         if (sureMessage) {
