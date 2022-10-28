@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Route, Routes, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 import ProductDetails from './components/Card/ProductDetails';
 import AddProduct from './components/Dashboard/AddProduct';
+import AllUser from './components/Dashboard/AllUser';
 import Dashboard from './components/Dashboard/Dashboard';
 import ManageProduct from './components/Dashboard/ManageProduct';
 import Footer from './components/Footer/Footer';
@@ -14,12 +15,26 @@ import Signup from './components/Login/Signup';
 import Navbar from './components/Navbar/Navbar';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import Whatsapp from './components/Whatsapp/Whatsapp';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import EditDetail from './components/Dashboard/EditDetail';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
+import { signOut } from 'firebase/auth';
 
 
 function App() {
   const pathName = useLocation()
-
+  // const navigate = useNavigate()
+  // const [user, loading] = useAuthState(auth)
+  // const path = pathName.pathname === '/dashboard' || '/dashboard/addProduct' || '/dashboard/manageProduct'
+  // if (!user && path) {
+  //   signOut(auth);
+  //   navigate('/')
+  // }
+  // if (loading) {
+  //   return <h1 className='text-center my-20 text-4xl font-bold'>Loading...</h1>
+  // }
   return (
     <div>
       <Navbar></Navbar>
@@ -34,8 +49,10 @@ function App() {
         </RequireAuth>}></Route>
         {/* nasted Route  */}
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
+          <Route path='/dashboard' element={<AllUser></AllUser>}></Route>
           <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='manageProduct' element={<ManageProduct></ManageProduct>}></Route>
+          <Route path='editDetails/:id' element={<EditDetail></EditDetail>}></Route>
         </Route>
       </Routes>
       {
@@ -47,6 +64,7 @@ function App() {
           pathName.pathname === '/dashboard' ? '' : <Whatsapp></Whatsapp>
         }
       </div>
+      <ToastContainer />
     </div>
   );
 }

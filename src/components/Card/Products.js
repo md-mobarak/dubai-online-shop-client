@@ -15,7 +15,7 @@ const Products = ({ product }) => {
     }
     return (
         <div className="card card-compact w-96 bg-base-200 shadow-2xl">
-            <figure><img className='h-96 w-96' src={image} alt="Shoes" /></figure>
+            <figure><img className='h-64 w-full' src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <h2 className="card-title">{price}</h2>
@@ -27,15 +27,15 @@ const Products = ({ product }) => {
                 </div>
                 <div className="flex justify-around items-center">
                     <button onClick={() => handleHeart(_id)}>
-                        <FaRegHeart className='text-2xl text-[#2998EC] hover:text-[#2998EC] hover:pointer'></FaRegHeart>
+                        <FaRegHeart className='text-2xl text-[#DE04E6] hover:text-[#2998EC] hover:pointer'></FaRegHeart>
                         {/* <FaHeart className='text-2xl text-[#2998EC] hover:text-[#2998EC] '></FaHeart> */}
                     </button>
 
 
                     <button onClick={() => handleHeart(_id)}
-                        className='btn btn-sm bg-[#2998EC] text-white border-0'>Comments</button>
+                        className='btn btn-sm bg-[#DE04E6] text-white border-0'>Comments</button>
                     <ReactWhatsapp number="+8801825639631" message='please provide your product name or Id' >
-                        <button className="btn btn-sm bg-[#2998EC] text-white border-0">Buy Now
+                        <button className="btn btn-sm bg-[#DE04E6] text-white border-0">Buy Now
 
                         </button>
                     </ReactWhatsapp>

@@ -1,0 +1,5 @@
+.add-product {
+    /* border: solid 1px purple; */
+    background: rgb(238, 174, 202);
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(152, 231, 165, 1) 100%);
+}

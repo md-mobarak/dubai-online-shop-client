@@ -2,18 +2,31 @@ import React from 'react';
 import './Navbar.css'
 import { BsFillCartFill } from 'react-icons/bs'
 import { FaUserAlt } from 'react-icons/fa'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import useAdmin from '../useHook/useAdmin';
 
 
 const Navbar = () => {
+    const navigate = useNavigate()
     const [user, loading, error] = useAuthState(auth);
+
+    const [admin] = useAdmin(user)
+    // console.log(admin.admin);
+    // if (admin === true) {
+    //     return console.log('I am admin');
+    // }
+
     const logout = () => {
         signOut(auth);
+        navigate('/login')
+        localStorage.removeItem('accessToken')
     };
-
+    if (loading) {
+        return <h1 className='text-center mt-20 font-bold text-4xl'>Loading...</h1>
+    }
     return (
         <div className="navbar bg-color">
             <div className="navbar-start">
@@ -25,10 +38,12 @@ const Navbar = () => {
                         <li><a>CONTACT US</a></li>
                         <li><a>ABOUT US</a></li>
 
-                        <li>
-                            <Link to='/dashboard'>DASHBOARD</Link>
-                        </li>
+                        {
+                            admin?.admin === true ? <li>
+                                <Link to='/dashboard'>DASHBOARD</Link>
+                            </li> : ''
 
+                        }
 
                     </ul>
                 </div>
@@ -39,9 +54,13 @@ const Navbar = () => {
                     <li className='text-white font-semibold'><a>CONTACT US</a></li>
 
                     <li className='text-white font-semibold'><a>ABOUT US</a></li>
-                    <li className='text-white font-semibold'>
-                        <Link to='/dashboard'>DASHBOARD</Link>
-                    </li>
+
+                    {
+                        user && admin?.admin === true ? <li className='text-white font-semibold'>
+                            <Link to='/dashboard'>DASHBOARD</Link>
+                        </li> : ''
+                    }
+
                 </ul>
             </div>
             <div className="navbar-end">

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -20,9 +21,13 @@ const ProductDetails = () => {
     const handleHeart = () => {
         setHeart(!heart)
     }
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
+    const onSubmit = data => {
+        reset()
+    };
     return (
-        <div>
-            <div className='w-full flex justify-center mt-10'>
+        <div className='lg:px-0 px-8'>
+            <div className='w-full flex justify-center  my-10'>
                 <div className="card card-compact w-96 bg-base-200 shadow-2xl">
                     <figure><img className='h-96 w-96' src={image} alt="Shoes" /></figure>
                     <div className="card-body">
@@ -38,23 +43,40 @@ const ProductDetails = () => {
                             <button onClick={handleHeart}>
                                 {
                                     !heart ?
-                                        <FaRegHeart className='text-2xl text-[#2998EC] hover:text-[#2998EC] hover:pointer'></FaRegHeart>
+                                        <FaRegHeart className='text-2xl text-[#DE04E6] hover:text-[#2998EC] hover:pointer'></FaRegHeart>
                                         :
-                                        <FaHeart className='text-2xl text-[#2998EC] hover:text-[#2998EC] '></FaHeart>
+                                        <FaHeart className='text-2xl text-[#DE04E6] hover:text-[#2998EC] '></FaHeart>
                                 }
                             </button>
 
 
                             <button onClick={() => setToggle(!toggle)}
-                                className='btn btn-sm bg-[#2998EC] text-white border-0'>Comments</button>
-                            <button className="btn btn-sm bg-[#2998EC] text-white border-0">Buy Now</button>
+                                className='btn btn-sm bg-[#DE04E6] text-white border-0'>Comments</button>
+                            <button className="btn btn-sm bg-[#DE04E6] text-white border-0">Buy Now</button>
 
                         </div>
                         {
                             toggle &&
                             <div>
-                                <h1 className='text-center text-3xl font-bold'>hello dears</h1>
-                                <button className='btn btn-sm btn-primary text-center' onClick={() => setToggle(false)}>Hide</button>
+                                <h1 className='text-center text-xl font-bold'>Comments</h1>
+                                <div>
+                                    {/* all comments */}
+                                </div>
+                                <form onSubmit={handleSubmit(onSubmit)}>
+                                    <div className=' flex justify-center'>
+                                        <textarea className="textarea textarea-primary"
+                                            {...register("comment", { required: true })}
+                                            placeholder="Type your comment" cols="40" rows="1"></textarea>
+                                        {/* errors will return when field validation fails  */}
+
+                                    </div>
+                                    <div className='flex justify-center'>
+                                        {errors.comment && <span className='text-red-600 '>This field is required</span>}
+                                    </div>
+                                    <div className='w-full mt-3'>
+                                        <button className='btn btn-xs w-full bg-[#DE04E6] font-bold text-white  btn-accent'>SEND</button>
+                                    </div>
+                                </form>
                             </div>
                         }
                     </div>

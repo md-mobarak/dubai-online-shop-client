@@ -4,7 +4,10 @@ import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../asset/Google_Icons-09-512.webp'
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import useHook from '../useHook/useHook';
+import useAdmin from '../useHook/useAdmin';
 const Signup = () => {
+
     const navigate = useNavigate()
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -15,20 +18,25 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+
     const { register, reset, formState: { errors }, handleSubmit } = useForm();
     const onSubmit = (data) => {
         createUserWithEmailAndPassword(data.email, data.password)
         reset()
     };
+
     const handleGoogle = () => {
         signInWithGoogle()
     }
+    const [token] = useHook(user || gUser)
+    // const [admin] = useAdmin(user || gUser)
     if (loading || gLoading) {
         return <h1>Loading...</h1>
     }
-    if (user || gUser) {
+    if (token) {
         return navigate(from, { replace: true });
     }
+
     return (
         <div className=' flex justify-center items-center mt-10 lg:mt-27'>
             <div className='text-center login-form w-[80%] lg:w-[50%] lg:h-[50%] lg:py-8 py-10 rounded-xl'>

@@ -5,8 +5,10 @@ import './Login.css'
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
+import useHook from '../useHook/useHook';
+import useAdmin from '../useHook/useAdmin';
 const Login = () => {
-    const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, gUser, gLoading, Gerror] = useSignInWithGoogle(auth);
     const navigate = useNavigate()
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
@@ -21,10 +23,14 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password)
         reset()
     };
-    if (user || Guser) {
+    const [token] = useHook(user || gUser)
+    // const [admin] = useAdmin(user || gUser)
+    if (token) {
         return navigate(from, { replace: true });
     }
-
+    if (loading || gLoading) {
+        return <h1>Loading...</h1>
+    }
 
     const handleGoogle = () => {
         signInWithGoogle()
