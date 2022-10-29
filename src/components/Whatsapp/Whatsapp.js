@@ -6,7 +6,7 @@ const Whatsapp = () => {
         <div>
 
             {/* <img className='w-20 h-20' src={icon} alt="" /> */}
-            <ReactWhatsapp number="+8801825639631" message="Hello World!!!" >
+            <ReactWhatsapp number="+8801825639631" message="please provide your product name" >
                 <img className='lg:w-40  lg:h-40 w-20 h-20' src={icon} alt="" />
             </ReactWhatsapp>
 

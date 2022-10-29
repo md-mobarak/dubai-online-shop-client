@@ -21,6 +21,8 @@ import EditDetail from './components/Dashboard/EditDetail';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
 import { signOut } from 'firebase/auth';
+import AboutUs from './components/AboutUs/AboutUs';
+import ContactUs from './components/ContactUs/ContactUs';
 
 
 function App() {
@@ -47,6 +49,9 @@ function App() {
         <Route path='/product/:id' element={<RequireAuth>
           <ProductDetails></ProductDetails>
         </RequireAuth>}></Route>
+        <Route path='/about' element={<AboutUs></AboutUs>}></Route>
+        <Route path='/contact' element={<ContactUs></ContactUs>}></Route>
+
         {/* nasted Route  */}
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
           <Route path='/dashboard' element={<AllUser></AllUser>}></Route>
@@ -55,10 +60,8 @@ function App() {
           <Route path='editDetails/:id' element={<EditDetail></EditDetail>}></Route>
         </Route>
       </Routes>
-      {
-        pathName === '/login' | '/signup' ? '' : <Footer></Footer>
-      }
 
+      <Footer></Footer>
       <div className='fixed lg:right-10 right-8 bottom-12'>
         {
           pathName.pathname === '/dashboard' ? '' : <Whatsapp></Whatsapp>

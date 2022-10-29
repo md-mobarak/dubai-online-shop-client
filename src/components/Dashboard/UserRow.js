@@ -49,7 +49,7 @@ const UserRow = ({ index, userTable }) => {
             <th>{index + 1}</th>
             <td>{email}</td>
             <td>{role !== 'admin' ? <button onClick={makeAdmin} className='btn btn-xs'> make Admin</button> : <h1>Already Admin</h1>}</td>
-            <td>{presentEmail === email ? '' : <button onClick={handleDelete} className='btn btn-xs'>Delete</button>}</td>
+            <td>{presentEmail === email ? '' : <button onClick={handleDelete} className='btn btn-xs bg-red-700 border-0 text-white'>Delete</button>}</td>
         </tr>
     );
 };

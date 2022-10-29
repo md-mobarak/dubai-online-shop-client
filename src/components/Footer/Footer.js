@@ -4,9 +4,9 @@ import './Footer.module.css'
 const Footer = () => {
 
     return (
-        <div>
+        <div className=''>
 
-            <footer className="footer mt-16 p-10 static bottom-0 bg-[#570DF8] text-base-content">
+            <footer className="footer  p-10  bg-[#570DF8] text-base-content">
                 <div>
                     <span className="footer-title text-white">Services</span>
                     <a className="text-white link link-hover">Branding</a>

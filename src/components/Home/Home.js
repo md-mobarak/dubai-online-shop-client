@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
-import Whatsapp from '../Whatsapp/Whatsapp';
+
 
 
 const Home = () => {
