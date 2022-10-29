@@ -27,15 +27,15 @@ const Products = ({ product }) => {
                 </div>
                 <div className="flex justify-around items-center">
                     <button onClick={() => handleHeart(_id)}>
-                        <FaRegHeart className='text-2xl text-[#DE04E6] hover:text-[#2998EC] hover:pointer'></FaRegHeart>
+                        <FaRegHeart className='text-2xl text-green-500 hover:text-[#2998EC] hover:pointer'></FaRegHeart>
                         {/* <FaHeart className='text-2xl text-[#2998EC] hover:text-[#2998EC] '></FaHeart> */}
                     </button>
 
 
                     <button onClick={() => handleHeart(_id)}
-                        className='btn btn-sm bg-[#DE04E6] text-white border-0'>Comments</button>
+                        className='btn btn-sm bg-green-500 text-white border-0'>Comments</button>
                     <ReactWhatsapp number="+8801825639631" message='please provide your product name or Id' >
-                        <button className="btn btn-sm bg-[#DE04E6] text-white border-0">Buy Now
+                        <button className="btn btn-sm bg-green-500 text-white border-0">Buy Now
 
                         </button>
                     </ReactWhatsapp>

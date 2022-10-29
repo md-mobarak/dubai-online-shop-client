@@ -27,9 +27,9 @@ const ProductMG = ({ product }) => {
                 <h2 className="card-title">{product.name}</h2>
                 <h2 className="card-title">price</h2>
                 <p></p>
-                <div className="flex justify-evenly items-center">
-                    <button onClick={handleDelete} className='btn btn-primary mr-3 ml-2 w-40'>DELETE</button>
-                    <button onClick={() => navigate(`/dashboard/editDetails/${product._id}`)} className='btn btn-secondary ml-3 mr-2  w-40'>EDIT</button>
+                <div className="flex justify-evenly items-center ">
+                    <button onClick={handleDelete} className='btn btn-sm btn-primary mr-3 ml-2 w-40'>DELETE</button>
+                    <button onClick={() => navigate(`/dashboard/editDetails/${product._id}`)} className='btn btn-sm bg-green-500 border-0 text-black hover:text-white ml-3 mr-2  w-40'>EDIT</button>
                 </div>
             </div>
         </div>

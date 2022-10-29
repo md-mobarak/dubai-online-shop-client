@@ -37,9 +37,9 @@ const Card = () => {
             <div className='flex justify-center mt-4 mb-10'>
                 {
                     isCompleted ?
-                        <button onClick={loadMore} className='btn btn-disabled text-white bg-red-700 w-[50%] lg:w-72'>Loaded</button>
+                        <button onClick={loadMore} className='btn btn-disabled text-white bg-red-500 w-[50%] lg:w-72'>Loaded</button>
                         :
-                        <button className='text-center btn btn-accent lg:w-72 w-[50%] text-white bg-[#DE04E6]' onClick={loadMore}>Show More</button>
+                        <button className='text-center btn btn-accent lg:w-72 w-[50%] text-white bg-green-500' onClick={loadMore}>Show More</button>
                 }
 
             </div>

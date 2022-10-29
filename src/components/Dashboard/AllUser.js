@@ -17,20 +17,20 @@ const AllUser = () => {
             })
     }, [users])
     return (
-        <div>
+        <div className=''>
             <h1 className='text-center font-bold text-2xl mb-5'>All USERS</h1>
-            <div className="overflow-x-auto">
-                <table className="table w-full">
+            <div className="overflow-x-auto ">
+                <table className="table w-full ">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>Number</th>
                             <th>Email</th>
                             <th>Action</th>
                             <th>Make Admin</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody >
                         {
                             users?.map((user, index) => <UserRow
                                 key={user._id}

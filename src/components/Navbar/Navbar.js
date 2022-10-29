@@ -28,7 +28,7 @@ const Navbar = () => {
         return <h1 className='text-center mt-20 font-bold text-4xl'>Loading...</h1>
     }
     return (
-        <div className="navbar bg-color">
+        <div className="navbar bg-green-500">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

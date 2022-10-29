@@ -43,16 +43,16 @@ const ProductDetails = () => {
                             <button onClick={handleHeart}>
                                 {
                                     !heart ?
-                                        <FaRegHeart className='text-2xl text-[#DE04E6] hover:text-[#2998EC] hover:pointer'></FaRegHeart>
+                                        <FaRegHeart className='text-2xl text-green-500 hover:text-[#2998EC] hover:pointer'></FaRegHeart>
                                         :
-                                        <FaHeart className='text-2xl text-[#DE04E6] hover:text-[#2998EC] '></FaHeart>
+                                        <FaHeart className='text-2xl text-green-500 hover:text-[#2998EC] '></FaHeart>
                                 }
                             </button>
 
 
                             <button onClick={() => setToggle(!toggle)}
-                                className='btn btn-sm bg-[#DE04E6] text-white border-0'>Comments</button>
-                            <button className="btn btn-sm bg-[#DE04E6] text-white border-0">Buy Now</button>
+                                className='btn btn-sm bg-green-500 text-white border-0'>Comments</button>
+                            <button className="btn btn-sm bg-green-500 text-white border-0">Buy Now</button>
 
                         </div>
                         {
@@ -84,7 +84,7 @@ const ProductDetails = () => {
             </div>
             <div className='lg:my-12 flex justify-center'>
                 <button onClick={() => navigate(-1)}
-                    className='btn btn-secondary bg-[#2998EC] w-full lg:text-2xl lg:w-[50%] text-white'>BACK HOME</button>
+                    className='btn btn-secondary bg-[#2998EC] border-0 w-full lg:text-2xl lg:w-[25%] text-white'>BACK HOME</button>
             </div>
         </div>
     );

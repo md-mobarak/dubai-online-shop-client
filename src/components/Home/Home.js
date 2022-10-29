@@ -6,7 +6,7 @@ import Whatsapp from '../Whatsapp/Whatsapp';
 const Home = () => {
     return (
         <div>
-            <h1 className='text-[#fafad2] text-xl lg:text-4xl font-bold'>
+            <h1 className='text-green-300 text-xl lg:text-4xl font-bold'>
                 <marquee scrollamount='10'>Cash on Delivery | Free Delivery on orders 300AED+</marquee>
             </h1>
             <h1 className='text-center  font-bold text-xl lg:text-4xl text-plum plate'>OUR PRODUCTS</h1>
