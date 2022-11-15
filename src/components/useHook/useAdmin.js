@@ -7,7 +7,7 @@ const useAdmin = (user) => {
         const email = user?.email
         // console.log(email)
         if (email) {
-            fetch(`https://dubai-online-shop.onrender.com/admin/${email}`, {
+            fetch(`https://dubai-online-shop-2-production.up.railway.app/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

@@ -38,7 +38,7 @@ const Signup = () => {
     }
 
     return (
-        <div className=' flex justify-center items-center mt-10 lg:mt-27'>
+        <div className=' flex justify-center items-center mt-10 lg:mt-27 mb-10'>
             <div className='text-center bg-green-300 w-[80%] lg:w-[50%] lg:h-[50%] lg:py-8 py-10 rounded-xl'>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <h1 className='text-xl lg:text-2xl font-bold  mt-7 lg:mb-[-30px]'>SIGNUP</h1>

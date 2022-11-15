@@ -23,6 +23,8 @@ import auth from './firebase.init';
 import { signOut } from 'firebase/auth';
 import AboutUs from './components/AboutUs/AboutUs';
 import ContactUs from './components/ContactUs/ContactUs';
+import Card from './components/Card/Card';
+import Card2 from './components/Card/Card2';
 
 
 function App() {
@@ -43,7 +45,9 @@ function App() {
 
       {/* <marquee behavior="" direction=""></marquee> */}
       <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/' element={<Home></Home>}>
+          <Route path='/loadmore' element={<Card></Card>}></Route>
+        </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='/product/:id' element={<RequireAuth>
@@ -60,13 +64,14 @@ function App() {
           <Route path='editDetails/:id' element={<EditDetail></EditDetail>}></Route>
         </Route>
       </Routes>
+      {pathName.pathname === '/about' ? '' : <Footer></Footer>}
 
-      <Footer></Footer>
       <div className='fixed lg:right-10 right-8 bottom-12'>
         {
           pathName.pathname === '/dashboard' ? '' : <Whatsapp></Whatsapp>
         }
       </div>
+
       <ToastContainer />
     </div>
   );

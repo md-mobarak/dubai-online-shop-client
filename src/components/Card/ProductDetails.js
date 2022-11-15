@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { useNavigate, useParams } from 'react-router-dom';
+import ReactWhatsapp from 'react-whatsapp';
 
 
 const ProductDetails = () => {
     const navigate = useNavigate()
     const { id } = useParams()
     const [productDtl, setProductDtl] = useState({})
-    const { name, image, price, description } = productDtl
+    const { name, image, price, description, _id } = productDtl
     useEffect(() => {
-        fetch(`https://dubai-online-shop.onrender.com/product/${id}`)
+        fetch(`https://dubai-online-shop-2-production.up.railway.app/product/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProductDtl(data);
@@ -52,7 +53,11 @@ const ProductDetails = () => {
 
                             <button onClick={() => setToggle(!toggle)}
                                 className='btn btn-sm bg-green-500 text-white border-0'>Comments</button>
-                            <button className="btn btn-sm bg-green-500 text-white border-0">Buy Now</button>
+                            <ReactWhatsapp number="+8801825639631" message={`Id:${_id} Name:${name} ImageURL:${image} `} >
+                                <button className="btn btn-sm bg-green-500 text-white border-0">Buy Now
+
+                                </button>
+                            </ReactWhatsapp>
 
                         </div>
                         {

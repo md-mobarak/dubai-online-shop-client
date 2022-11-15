@@ -14,8 +14,8 @@ const Products = ({ product }) => {
         navigate(`/product/${id}`)
     }
     return (
-        <div className="card card-compact w-96 bg-base-200 shadow-2xl">
-            <figure><img className='h-64 w-full' src={image} alt="Shoes" /></figure>
+        <div className="card card-compact lg:w-96 w-full  bg-base-200 shadow-2xl">
+            <figure><img className='h-64 w-full ' src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <h2 className="card-title">Price${price}</h2>

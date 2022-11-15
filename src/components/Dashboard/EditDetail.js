@@ -10,7 +10,7 @@ const EditDetail = () => {
     const { _id } = productDetails
     // console.log(productDetails);
     useEffect(() => {
-        fetch(`https://dubai-online-shop.onrender.com/editDetails/${id}`)
+        fetch(`https://dubai-online-shop-2-production.up.railway.app/editDetails/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProductDetails(data)
@@ -26,7 +26,7 @@ const EditDetail = () => {
             ...data,
             image: imageURL,
         }
-        const res = await axios.put(`https://dubai-online-shop.onrender.com/editProduct/${_id}`, product)
+        const res = await axios.put(`https://dubai-online-shop-2-production.up.railway.app/editProduct/${_id}`, product)
         reset()
         const sureMessage = res.status === 200
         if (sureMessage) {
@@ -51,7 +51,7 @@ const EditDetail = () => {
     const handleSubmitImage = (e) => {
         const image = e.target.files[0]
         const formData = new FormData()
-        formData.set("image", image)
+        formData.append("image", image)
         axios.post('https://api.imgbb.com/1/upload?key=13ac64a50e615cb2aadefb6ca184b4ae', formData)
             .then((res) => {
                 setImageURL(res.data.data.display_url)
@@ -84,7 +84,7 @@ const EditDetail = () => {
                             className="input input-bordered input-accent shadow-lg " />
 
 
-                        {errors.name?.type === 'required' && <p className='text-red-500 text-center' role="alert">First name is required</p>}
+                        {errors.name?.type === 'required' && <p className='text-red-500 text-center' role="alert">name is required</p>}
 
 
                         <p className='font-semibold text-center text-2xl'>price</p>
@@ -94,6 +94,18 @@ const EditDetail = () => {
                             className="input input-bordered input-accent shadow-lg" />
 
                         {errors.price?.type === 'required' && <p className='text-red-500 text-center' role="alert">price required</p>}
+
+                        <p className='font-semibold text-center text-2xl'>Category</p>
+                        <select className="input input-bordered input-accent shadow-lg"  {...register("category", { required: "Category is required" })}
+                            aria-invalid={errors.category ? "true" : "false"}>
+                            <option value="Device">Device</option>
+                            <option value="Juice">Juice</option>
+                            <option value="Disposible">Disposible</option>
+                            <option value="Heets"> Heets</option>
+                            <option value="Iqos device"> Iqos device</option>
+                            <option value="Accosorice"> Accosorice</option>
+                        </select>
+                        {errors.category?.type === 'required' && <p className='text-red-500 text-center' role="alert">Category is required</p>}
 
                         <p className='font-semibold text-center text-2xl'>Description</p>
                         <textarea className="textarea textarea-accent shadow-lg"

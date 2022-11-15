@@ -1,20 +1,24 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const ProductMG = ({ product }) => {
     const navigate = useNavigate()
     const handleDelete = () => {
         const id = product._id
 
-        const proceed = window.alert('Are you sure?')
-
-        fetch(`https://dubai-online-shop.onrender.com/product/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-
+        if (id) {
+            fetch(`https://dubai-online-shop-2-production.up.railway.app/product/${id}`, {
+                method: 'DELETE'
             })
+                .then(res => res.json())
+                .then(data => {
+                    const acknowledged = data.acknowledged === true
+                    if (acknowledged) {
+                        toast.success('Your product is Delete!!')
+                    }
+                })
+        }
 
     }
 

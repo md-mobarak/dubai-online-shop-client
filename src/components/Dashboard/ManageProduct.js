@@ -5,7 +5,7 @@ import ProductMG from './ProductMG';
 const ManageProduct = () => {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        fetch('https://dubai-online-shop.onrender.com/product')
+        fetch('https://dubai-online-shop-2-production.up.railway.app/product')
             .then(res => res.json())
             .then(data => {
                 setProducts(data.reverse())

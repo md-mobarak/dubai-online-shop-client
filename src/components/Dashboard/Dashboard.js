@@ -1,15 +1,21 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, NavLink, Outlet } from 'react-router-dom';
-import auth from '../../firebase.init';
-import useAdmin from '../useHook/useAdmin';
+import { Helmet } from 'react-helmet';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
+
 
 
 const Dashboard = () => {
+    const pathName = useLocation()
     return (
         <div>
 
-
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>VAPELAND DASHBOARD</title>
+                <link rel="canonical" href="http://mysite.com/dashboard" />
+                <meta name="description" content="VAPELAND DASHBOARD " />
+            </Helmet>
             <div className="drawer drawer-mobile">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content ">
@@ -32,13 +38,13 @@ const Dashboard = () => {
                     <ul className="menu p-4 overflow-y-auto w-80 bg-green-400 text-base-content">
                         {/* <!-- Sidebar content here --> */}
                         <li>
-                            <Link to='/dashboard' className=' lg:text-2xl text-xl text-white '>All User</Link>
+                            <Link to='/dashboard' className={`${pathName.pathname === '/dashboard' ? 'lg:text-2xl text-xl  text-yellow-200' : ' lg:text-2xl text-xl text-white'}`}>All User</Link>
                         </li>
                         <li>
-                            <Link to='/dashboard/addProduct' className=' lg:text-2xl text-xl text-white'>Add Product</Link>
+                            <Link to='/dashboard/addProduct' className={`${pathName.pathname === '/dashboard/addProduct' ? 'lg:text-2xl text-xl  text-yellow-200' : ' lg:text-2xl text-xl text-white'}`}>Add Product</Link>
                         </li>
                         <li>
-                            <Link to='/dashboard/manageProduct' className='lg:text-2xl text-xl text-white'>Manage Product</Link>
+                            <Link to='/dashboard/manageProduct' className={`${pathName.pathname === '/dashboard/manageProduct' ? 'lg:text-2xl text-xl  text-yellow-200' : ' lg:text-2xl text-xl text-white'}`}>Manage Product</Link>
                         </li>
                     </ul>
 

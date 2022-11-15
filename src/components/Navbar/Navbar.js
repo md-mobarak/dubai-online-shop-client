@@ -2,7 +2,7 @@ import React from 'react';
 import './Navbar.css'
 import { BsFillCartFill } from 'react-icons/bs'
 import { FaUserAlt } from 'react-icons/fa'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -10,6 +10,7 @@ import useAdmin from '../useHook/useAdmin';
 
 
 const Navbar = () => {
+    const pathName = useLocation()
     const navigate = useNavigate()
     const [user, loading, error] = useAuthState(auth);
 
@@ -28,7 +29,7 @@ const Navbar = () => {
         return <h1 className='text-center mt-20 font-bold text-4xl'>Loading...</h1>
     }
     return (
-        <div className="navbar bg-green-500">
+        <div className="navbar bg-green-500 sticky z-40 top-0 lg:py-4">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -47,16 +48,16 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <Link to='/' className="text-white normal-case text-2xl lg:mx-10">VAPELAND</Link>
+                <Link to='/' className={`${pathName.pathname === '/' ? 'text-yellow-200 normal-case text-2xl lg:mx-10' : 'text-white normal-case text-2xl lg:mx-10'}`}>VAPELAND</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
-                    <li className='text-white font-semibold'><Link to='/contact'>CONTACT US</Link></li>
+                    <li className={`${pathName.pathname === '/contact' ? 'text-yellow-200 font-semibold' : 'text-white font-semibold'}`}><Link to='/contact'>CONTACT US</Link></li>
 
-                    <li className='text-white font-semibold'><Link to='about'>ABOUT US</Link></li>
+                    <li className={`${pathName.pathname === '/about' ? 'text-yellow-200 font-semibold lg:mx-4' : 'text-white font-semibold lg:mx-4'}`}><Link to='about'>ABOUT US</Link></li>
 
                     {
-                        user && admin?.admin === true ? <li className='text-white font-semibold'>
+                        user && admin?.admin === true ? <li className={`${pathName.pathname === '/dashboard' ? 'text-yellow-200 font-semibold lg:mx-4' : 'text-white font-semibold lg:mx-4'}`}>
                             <Link to='/dashboard'>DASHBOARD</Link>
                         </li> : ''
                     }
@@ -74,7 +75,7 @@ const Navbar = () => {
                             <button onClick={logout}>
                                 <FaUserAlt className='text-white lg:text-xl text-lg'></FaUserAlt>
                             </button> :
-                            <Link className='text-white lg:text-xl font-semibold' to='/login'>
+                            <Link className={`${pathName.pathname === '/login' ? 'text-yellow-200 font-semibold lg:text-xl lg:mx-4' : 'text-white font-semibold lg:text-xl lg:mx-4'}`} to='/login'>
                                 Login
                             </Link>
                     }
