@@ -48,7 +48,7 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <Link to='/' className={`${pathName.pathname === '/' ? 'text-yellow-200 normal-case text-2xl lg:mx-10' : 'text-white normal-case text-2xl lg:mx-10'}`}>VAPELAND</Link>
+                <Link to='/' className={`${pathName.pathname === '/' || '/loadmore' ? 'text-yellow-200 normal-case text-2xl lg:mx-10' : 'text-white normal-case text-2xl lg:mx-10'}`}>VAPELAND</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">

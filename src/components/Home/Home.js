@@ -3,6 +3,7 @@ import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Products from '../Card/Products';
 import { BsFilterSquare } from 'react-icons/bs'
 import { Helmet } from 'react-helmet';
+import Banner from './Banner';
 
 
 const Home = () => {
@@ -45,10 +46,14 @@ const Home = () => {
                 <link rel="canonical" href="http://mysite.com/example" />
                 <meta name="description" content="VAPELAND" />
             </Helmet>
-            <h1 className='text-green-300 text-xl lg:text-4xl font-bold'>
+            {/* <h1 className='text-green-300 text-xl lg:text-4xl font-bold'>
                 <marquee scrollamount='10'>Cash on Delivery | Free Delivery on orders 300AED+</marquee>
-            </h1>
-            <h1 className='text-center  font-bold text-xl lg:text-4xl text-plum plate'>OUR PRODUCTS</h1>
+            </h1> */}
+            <Banner></Banner>
+            {/* <h1 className='text-green-300 text-xl lg:text-4xl font-bold'>
+                <marquee scrollamount='10'>Cash on Delivery | Free Delivery on orders 300AED+</marquee>
+            </h1> */}
+            <h1 className='text-center mt-5 font-bold text-xl lg:text-4xl text-plum plate'>OUR PRODUCTS</h1>
 
             <div >
                 <div className='flex justify-end lg:px-32'>
