@@ -24,6 +24,9 @@ const Card = () => {
             setIsCompleted(false)
         }
     }
+    if (!initialPosts.length) {
+        return <h1 className='text-center mt-20 text-3xl font-bold'>loading...</h1>
+    }
 
     return (
         <div >

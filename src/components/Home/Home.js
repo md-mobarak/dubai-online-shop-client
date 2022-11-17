@@ -4,6 +4,7 @@ import Products from '../Card/Products';
 import { BsFilterSquare } from 'react-icons/bs'
 import { Helmet } from 'react-helmet';
 import Banner from './Banner';
+import ChooseUs from './ChooseUs';
 
 
 const Home = () => {
@@ -24,12 +25,10 @@ const Home = () => {
     }, [])
 
     const filterProduct = (filter) => {
-
         const allProductFilter = products.filter(elm => elm?.category === filter)
         setIsProduct(allProductFilter)
         SetButton(!button)
         setProductFilter()
-
         setToggle()
     }
     const reloadPage = () => {
@@ -46,14 +45,10 @@ const Home = () => {
                 <link rel="canonical" href="http://mysite.com/example" />
                 <meta name="description" content="VAPELAND" />
             </Helmet>
-            {/* <h1 className='text-green-300 text-xl lg:text-4xl font-bold'>
-                <marquee scrollamount='10'>Cash on Delivery | Free Delivery on orders 300AED+</marquee>
-            </h1> */}
+
             <Banner></Banner>
-            {/* <h1 className='text-green-300 text-xl lg:text-4xl font-bold'>
-                <marquee scrollamount='10'>Cash on Delivery | Free Delivery on orders 300AED+</marquee>
-            </h1> */}
-            <h1 className='text-center mt-5 font-bold text-xl lg:text-4xl text-plum plate'>OUR PRODUCTS</h1>
+
+            <h1 className='text-center text-[#011F48] lg:mt-5 font-bold text-xl lg:text-4xl text-plum plate'>OUR PRODUCTS</h1>
 
             <div >
                 <div className='flex justify-end lg:px-32'>
@@ -101,6 +96,9 @@ const Home = () => {
                     }
                 </div>
             }
+            <div className='lg:my-16 my-10'>
+                <ChooseUs></ChooseUs>
+            </div>
         </div >
     );
 };
