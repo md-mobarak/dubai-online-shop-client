@@ -5,6 +5,7 @@ import { BsFilterSquare } from 'react-icons/bs'
 import { Helmet } from 'react-helmet';
 import Banner from './Banner';
 import ChooseUs from './ChooseUs';
+import OurNews from './OurNews';
 
 
 const Home = () => {
@@ -81,7 +82,7 @@ const Home = () => {
             <div>
                 <div className='lg:px-16 px-10 py-3 grid lg:grid-cols-3 gap-x-5 gap-y-8 md:grid-cols-2 md:gap-4 lg:gap-10 '>
                     {
-                        pathName.pathname === '/loadmore' ? '' : productFilter && products?.slice(0, 3).map(product =>
+                        pathName.pathname === '/loadmore' ? '' : productFilter && products?.slice(0, 6).map(product =>
                             <Products product={product} key={product._id}></Products>)
                     }
                 </div>
@@ -98,6 +99,9 @@ const Home = () => {
             }
             <div className='lg:my-16 my-10'>
                 <ChooseUs></ChooseUs>
+            </div>
+            <div>
+                <OurNews></OurNews>
             </div>
         </div >
     );

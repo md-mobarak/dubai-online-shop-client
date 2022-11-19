@@ -53,7 +53,7 @@ const ProductDetails = () => {
 
                             <button onClick={() => setToggle(!toggle)}
                                 className='btn btn-sm bg-green-500 text-white border-0'>Comments</button>
-                            <ReactWhatsapp number="+8801825639631" message={`Id:${_id} Name:${name} ImageURL:${image} `} >
+                            <ReactWhatsapp number="+971 50 937 8575" message={`Id:${_id} Name:${name} ImageURL:${image} `} >
                                 <button className="btn btn-sm bg-green-500 text-white border-0">Buy Now
 
                                 </button>
@@ -69,7 +69,7 @@ const ProductDetails = () => {
                                 </div>
                                 <form onSubmit={handleSubmit(onSubmit)}>
                                     <div className=' flex justify-center'>
-                                        <textarea className="textarea textarea-primary"
+                                        <textarea className="textarea textarea-primary border border-green-500"
                                             {...register("comment", { required: true })}
                                             placeholder="Type your comment" cols="40" rows="1"></textarea>
                                         {/* errors will return when field validation fails  */}
@@ -79,7 +79,7 @@ const ProductDetails = () => {
                                         {errors.comment && <span className='text-red-600 '>This field is required</span>}
                                     </div>
                                     <div className='w-full mt-3'>
-                                        <button className='btn btn-xs w-full bg-[#DE04E6] font-bold text-white  btn-accent'>SEND</button>
+                                        <button className='btn btn-xs w-full bg-green-500 font-bold text-white  btn-accent'>SEND</button>
                                     </div>
                                 </form>
                             </div>

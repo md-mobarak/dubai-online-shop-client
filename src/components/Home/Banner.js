@@ -33,15 +33,15 @@ const Banner = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide><img className='w-full  lg:h-[700px] h-48' src={bannar6} alt="" />
+                <SwiperSlide><img className='w-full  lg:h-[650px] h-48' src={bannar6} alt="" />
                 </SwiperSlide>
-                <SwiperSlide><img className='w-full  lg:h-[700px] h-48' src={bannar1} alt="" />
+                <SwiperSlide><img className='w-full  lg:h-[650px] h-48' src={bannar1} alt="" />
                 </SwiperSlide>
-                <SwiperSlide><img className='w-full  lg:h-[700px] h-48' src={bannar4} alt="" />
+                <SwiperSlide><img className='w-full  lg:h-[650px] h-48' src={bannar4} alt="" />
                 </SwiperSlide>
-                <SwiperSlide><img className='w-full  lg:h-[700px] h-48' src={bannar3} alt="" />
+                <SwiperSlide><img className='w-full  lg:h-[650px] h-48' src={bannar3} alt="" />
                 </SwiperSlide>
-                <SwiperSlide><img className='w-full  lg:h-[700px] h-48' src={bannar5} alt="" />
+                <SwiperSlide><img className='w-full  lg:h-[650px] h-48' src={bannar5} alt="" />
                 </SwiperSlide>
             </Swiper>
 

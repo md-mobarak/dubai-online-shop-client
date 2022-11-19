@@ -13,12 +13,12 @@ const Products = ({ product }) => {
         navigate(`/product/${id}`)
     }
     return (
-        <div className="card card-compact lg:w-96 w-full  bg-base-200 shadow-2xl">
+        <div className="card card-compact lg:w-96 w-full  bg-base-100 shadow-2xl">
             <figure><img className='h-64 w-full ' src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
                 <h2 className="card-title">Price ${price}</h2>
-                <p>{description?.slice(0, 100)}</p>
+                <p title={description}>Description: {description?.slice(0, 100)}</p>
                 <div className='flex items-center'>
                     <span className='ml-6'>Rating</span>
                     <span className='ml-12'>3comments</span>

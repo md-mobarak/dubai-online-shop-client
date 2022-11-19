@@ -7,7 +7,7 @@ const Card = () => {
     const pathName = useLocation()
     const navigate = useNavigate()
     const [isCompleted, setIsCompleted] = useState(false)
-    const [index, setIndex] = useState(6)
+    const [index, setIndex] = useState(9)
     const initialPosts = slice(products, 0, index)
     useEffect(() => {
         fetch(`https://dubai-online-shop-2-production.up.railway.app/product`)
