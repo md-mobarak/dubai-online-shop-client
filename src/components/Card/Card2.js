@@ -11,7 +11,7 @@ const Card2 = () => {
     const navigate = useNavigate()
     // console.log(products);
     useEffect(() => {
-        fetch('https://dubai-online-shop-2-production.up.railway.app/product')
+        fetch('https://dubai-online-shop-2.vercel.app/product')
             .then(res => res.json())
             .then(data => {
                 setProducts(data.reverse())

@@ -59,7 +59,7 @@ function App() {
         <Route path='/about' element={<AboutUs></AboutUs>}></Route>
         <Route path='/contact' element={<ContactUs></ContactUs>}></Route>
 
-        {/* nasted Route  */}
+        nasted Route
         <Route path='/dashboard' element={<Dashboard></Dashboard>}>
           <Route path='/dashboard' element={<AllUser></AllUser>}></Route>
           <Route path='addProduct' element={<AddProduct></AddProduct>}></Route>

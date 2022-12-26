@@ -6,7 +6,7 @@ const useHook = (user) => {
         const email = user?.user?.email
         const currentUsers = { email: email }
         if (email) {
-            fetch(`https://dubai-online-shop-2-production.up.railway.app/user/${email}`, {
+            fetch(`https://dubai-online-shop-2.vercel.app/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

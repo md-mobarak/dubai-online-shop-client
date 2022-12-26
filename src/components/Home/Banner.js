@@ -16,18 +16,22 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 const Banner = () => {
 
     return (
-        <div className='flex justify-center items-center  mb-3 lg:mb-0'>
+        <div data-aos="zoom-in"
+            data-aos-duration="2000"
+            className='flex justify-center items-center  mb-3 lg:mb-0'>
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
                 loop={true}
                 autoplay={{
-                    delay: 2000,
-                    disableOnInteraction: false,
+                    delay: 1000,
+                    disableOnInteraction: true,
                 }}
                 pagination={{
                     clickable: true,
-                    type: "progressbar",
+                    // renderBullet: function (index, className) {
+                    //     return '<span class="' + className + '">' + (index + 1) + "</span>";
+                    // }
                 }}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}

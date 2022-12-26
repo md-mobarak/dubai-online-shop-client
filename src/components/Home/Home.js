@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import Banner from './Banner';
 import ChooseUs from './ChooseUs';
 import OurNews from './OurNews';
+import MapLocation from './MapLocation';
 
 
 const Home = () => {
@@ -18,7 +19,7 @@ const Home = () => {
     const [button, SetButton] = useState(true)
 
     useEffect(() => {
-        fetch('https://dubai-online-shop-2-production.up.railway.app/product')
+        fetch('https://dubai-online-shop-2.vercel.app/product')
             .then(res => res.json())
             .then(data => {
                 setProducts(data.reverse())
@@ -37,7 +38,9 @@ const Home = () => {
         window.location.reload(false)
         SetButton(button)
     }
-
+    if (!products) {
+        return <h1 className='text-center text-3xl font-bold'>Loading...</h1>
+    }
     return (
         <div>
             <Helmet>
@@ -49,7 +52,7 @@ const Home = () => {
 
             <Banner></Banner>
 
-            <h1 className='text-center text-[#011F48] lg:mt-5 font-bold text-xl lg:text-4xl text-plum plate'>OUR PRODUCTS</h1>
+            <h1 className='text-center text-[#011F48] lg:mt-5 font-bold text-xl lg:text-4xl text-plum plate'>VAPE STORE</h1>
 
             <div >
                 <div className='flex justify-end lg:px-32'>
@@ -61,12 +64,12 @@ const Home = () => {
                     toggle &&
                     <div className='flex justify-end lg:pr-32 pr-3'>
                         <ul>
-                            <li onClick={() => filterProduct('Device',)} className='lg:text-xl cursor-pointer'>Device</li>
-                            <li onClick={() => filterProduct('Juice')} className='lg:text-xl cursor-pointer'>Juice</li>
-                            <li onClick={() => filterProduct('Disposible')} className='lg:text-xl cursor-pointer'>Disposible</li>
-                            <li onClick={() => filterProduct('Heets')} className='lg:text-xl cursor-pointer'>Heets</li>
-                            <li onClick={() => filterProduct('Iqos device')} className='lg:text-xl cursor-pointer'>Iqos device</li>
-                            <li onClick={() => filterProduct('Accosorice')} className='lg:text-xl cursor-pointer'>Accosorice</li>
+                            <li onClick={() => filterProduct('Device',)} className='lg:text-xl cursor-pointer hover:text-green-600 hover:font-semibold'>Device</li>
+                            <li onClick={() => filterProduct('Juice')} className='lg:text-xl cursor-pointer hover:text-green-600 hover:font-semibold'>Juice</li>
+                            <li onClick={() => filterProduct('Disposible')} className='lg:text-xl cursor-pointer hover:text-green-600 hover:font-semibold'>Disposible</li>
+                            <li onClick={() => filterProduct('Heets')} className='lg:text-xl cursor-pointer hover:text-green-600 hover:font-semibold'>Heets</li>
+                            <li onClick={() => filterProduct('Iqos device')} className='lg:text-xl cursor-pointer hover:text-green-600 hover:font-semibold'>Iqos device</li>
+                            <li onClick={() => filterProduct('Accosorice')} className='lg:text-xl cursor-pointer hover:text-green-600 hover:font-semibold'>Accosorice</li>
                         </ul>
                     </div>
                 }
@@ -102,6 +105,9 @@ const Home = () => {
             </div>
             <div>
                 <OurNews></OurNews>
+            </div>
+            <div>
+                <MapLocation></MapLocation>
             </div>
         </div >
     );

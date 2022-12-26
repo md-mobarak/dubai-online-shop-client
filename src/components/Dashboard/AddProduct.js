@@ -12,7 +12,7 @@ const AddProduct = () => {
             ...data,
             image: imageURL,
         }
-        const res = await axios.post('https://dubai-online-shop-2-production.up.railway.app/product', serviceData)
+        const res = await axios.post('https://dubai-online-shop-2.vercel.app/product', serviceData)
         reset()
         const sureMessage = res.status === 200
         if (sureMessage) {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import ReactWhatsapp from 'react-whatsapp';
@@ -6,14 +6,26 @@ import ReactWhatsapp from 'react-whatsapp';
 
 const Products = ({ product }) => {
     const navigate = useNavigate()
+    const [productComment, setProductComment] = useState([])
     const { name, image, price, description, _id } = product
     const [heart, setHeart] = useState(false)
     const handleHeart = (id) => {
         setHeart(!heart)
         navigate(`/product/${id}`)
     }
+    // get comments of product 
+    useEffect(() => {
+        fetch(`https://dubai-online-shop-2.vercel.app/comment`)
+            .then(res => res.json())
+            .then(data => {
+                setProductComment(data?.reverse())
+            })
+    }, [productComment])
+    const filterComments = productComment?.filter(c => _id === c.product_id)
     return (
-        <div className="card card-compact lg:w-96 w-full  bg-base-100 shadow-2xl">
+        <div data-aos="zoom-in"
+            data-aos-duration="2000"
+            className="card card-compact lg:w-96 w-full  bg-base-100 shadow-2xl">
             <figure><img className='h-64 w-full ' src={image} alt="Shoes" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
@@ -21,12 +33,12 @@ const Products = ({ product }) => {
                 <p title={description}>Description: {description?.slice(0, 100)}</p>
                 <div className='flex items-center'>
                     <span className='ml-6'>Rating</span>
-                    <span className='ml-12'>3comments</span>
+                    <span className='ml-12'>comments  {filterComments?.length ? filterComments.length : 0}</span>
                     <span> </span>
                 </div>
                 <div className="flex justify-around items-center">
                     <button onClick={() => handleHeart(_id)}>
-                        <FaRegHeart className='text-2xl text-green-500 hover:text-[#2998EC] hover:pointer'></FaRegHeart>
+                        <FaHeart className='text-2xl text-green-500 hover:text-[#2998EC] '></FaHeart>
 
                     </button>
                     <button onClick={() => handleHeart(_id)}

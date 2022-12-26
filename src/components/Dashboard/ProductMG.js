@@ -8,7 +8,7 @@ const ProductMG = ({ product }) => {
         const id = product._id
 
         if (id) {
-            fetch(`https://dubai-online-shop-2-production.up.railway.app/product/${id}`, {
+            fetch(`https://dubai-online-shop-2.vercel.app/product/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

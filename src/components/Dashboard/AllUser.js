@@ -4,7 +4,7 @@ import UserRow from './UserRow';
 const AllUser = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch('https://dubai-online-shop-2-production.up.railway.app/user', {
+        fetch('https://dubai-online-shop-2.vercel.app/user', {
             method: 'GET',
             headers: {
                 authorization: `Berar ${localStorage.getItem('accessToken')}`
