@@ -103,11 +103,11 @@ const Home = () => {
             <div className='lg:my-16 my-10'>
                 <ChooseUs></ChooseUs>
             </div>
-            <div>
+            <div className='flex justify-center items-center px-8 lg:px-0'>
                 <OurNews></OurNews>
             </div>
             <div>
-                <MapLocation></MapLocation>
+                {/* <MapLocation></MapLocation> */}
             </div>
         </div >
     );
